@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gaming-background: var(--bg-color);
+  --color-gaming-surface: var(--surface-color);
+  --color-gaming-border: var(--border-color);
+  --color-gaming-accent: var(--accent-color);
+  --color-gaming-text: var(--text-color);
+  --color-gaming-muted: var(--muted-color);
+}
+
+@layer base {
+  :root {
+    --bg-color: #09090b;
+    --surface-color: #18181b;
+    --border-color: #27272a;
+    --accent-color: #3b82f6;
+    --text-color: #fafafa;
+    --muted-color: #a1a1aa;
+  }
+  
+  [data-theme="midnight"] {
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --border-color: #334155;
+    --accent-color: #6366f1;
+    --text-color: #f8fafc;
+    --muted-color: #94a3b8;
+  }
+
+  [data-theme="oled"] {
+    --bg-color: #000000;
+    --surface-color: #0a0a0a;
+    --border-color: #171717;
+    --accent-color: #ef4444;
+    --text-color: #ffffff;
+    --muted-color: #737373;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow: hidden; /* Console style, no scrollbars globally */
+    user-select: none;
+    cursor: default;
+  }
+}
+
+/* Glassmorphism utilities */
+@layer utilities {
+  .glass-panel {
+    background: rgba(24, 24, 27, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .focused-item {
+    outline: 2px solid #fafafa;
+    outline-offset: 2px;
+    transform: scale(1.02);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  }
+}
