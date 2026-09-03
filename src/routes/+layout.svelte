@@ -25,7 +25,7 @@
 >
   <!-- Background Ambient Glow -->
   <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-1/4 -right-1/4 w-[1000px] h-[1000px] bg-gaming-accent opacity-10 blur-[150px] rounded-full"></div>
+    <div class="absolute -top-1/4 -right-1/4 w-250 h-250 bg-gaming-accent opacity-10 blur-[150px] rounded-full"></div>
   </div>
   
   <Navigation />

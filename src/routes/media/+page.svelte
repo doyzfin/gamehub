@@ -30,7 +30,7 @@
               class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style="background-image: url('{media.url}');"
             ></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             {#if media.type === 'video'}
               <div class="absolute top-3 right-3 bg-black/60 rounded-full p-2 backdrop-blur-md">
@@ -48,20 +48,3 @@
     {/if}
   </div>
 </div>
-
-<style>
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: rgba(24, 24, 27, 0.5);
-    border-radius: 10px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
-  }
-</style>

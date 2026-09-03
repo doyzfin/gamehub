@@ -25,7 +25,7 @@ function createGamesStore() {
         init: async () => {
             try {
                 storeInstance = await load('games.json', { autoSave: true });
-                const savedGames = await storeInstance.get<Game[]>('library');
+                const savedGames = (await storeInstance.get('library')) as Game[];
                 if (savedGames) {
                     set(savedGames);
                 } else {

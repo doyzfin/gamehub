@@ -25,7 +25,7 @@ function createSettingsStore() {
         init: async () => {
             try {
                 storeInstance = await load('settings.json', { autoSave: true });
-                const savedSettings = await storeInstance.get<Settings>('preferences');
+                const savedSettings = (await storeInstance.get('preferences')) as Settings;
                 
                 let currentSettings = defaultSettings;
                 if (savedSettings) {

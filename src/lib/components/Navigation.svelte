@@ -10,7 +10,7 @@
   ];
   
   let currentTime = $state('');
-  let timer: number;
+  let timer: ReturnType<typeof setInterval>;
   
   onMount(() => {
     const updateTime = () => {
@@ -25,7 +25,7 @@
   });
 </script>
 
-<header class="fixed top-0 left-0 w-full h-20 px-12 flex items-center justify-between z-50 bg-gradient-to-b from-gaming-background to-transparent">
+<header class="fixed top-0 left-0 w-full h-20 px-12 flex items-center justify-between z-50 bg-linear-to-b from-gaming-background to-transparent">
   <div class="flex items-center gap-4">
     <div class="w-10 h-10 rounded-full bg-gaming-surface border border-gaming-border flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gaming-accent"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>

@@ -38,15 +38,17 @@
       
       <div class="flex gap-6 overflow-x-auto pb-4 pt-2 px-2 -mx-2 hide-scrollbar">
         {#each $games as game, i}
-          <GameCard 
-            {game} 
-            selected={i === selectedGameIndex} 
-            on:click={() => selectedGameIndex = i}
-          />
+          <div class="w-48 shrink-0">
+            <GameCard 
+              {game} 
+              selected={i === selectedGameIndex} 
+              on:click={() => selectedGameIndex = i}
+            />
+          </div>
         {/each}
         
         <!-- Add Game button -->
-        <button class="aspect-[3/4] w-48 rounded-2xl glass-panel flex-shrink-0 flex flex-col items-center justify-center gap-4 hover:bg-white/5 transition-colors border-dashed border-2 border-gaming-border hover:border-gaming-accent text-gaming-muted hover:text-white group">
+        <button class="aspect-3/4 w-48 rounded-2xl glass-panel shrink-0 flex flex-col items-center justify-center gap-4 hover:bg-white/5 transition-colors border-dashed border-2 border-gaming-border hover:border-gaming-accent text-gaming-muted hover:text-white group">
           <div class="w-12 h-12 rounded-full border-2 border-current flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
             +
           </div>
@@ -63,13 +65,3 @@
     
   </div>
 </div>
-
-<style>
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>

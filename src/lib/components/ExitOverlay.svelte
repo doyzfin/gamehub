@@ -56,7 +56,7 @@
 </script>
 
 {#if isHoldingEsc && exitProgress > 0}
-  <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300">
+  <div class="fixed inset-0 z-100 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300">
     <div class="text-2xl font-light mb-8">Hold ESC to exit</div>
     
     <div class="w-96 h-2 bg-gaming-surface rounded-full overflow-hidden mb-4">

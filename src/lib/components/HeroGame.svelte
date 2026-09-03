@@ -15,15 +15,14 @@
 
 {#if game}
   <div class="relative w-full h-[60vh] rounded-3xl overflow-hidden mb-8 shadow-2xl glass-panel transition-all duration-500 group">
-    <!-- Background Image -->
-    <div 
-      class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-      style="background-image: url('{game.background || game.cover || ''}');"
-    ></div>
-    
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-t from-gaming-background via-gaming-background/60 to-transparent"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-gaming-background via-gaming-background/40 to-transparent"></div>
+    <div class="absolute inset-0 z-0">
+      <!-- Main Cover Image -->
+      <div class="absolute inset-0 bg-cover bg-center transition-all duration-1000 blur-sm scale-105 opacity-40" style="background-image: url('{game.background || game.cover}');"></div>
+      
+      <!-- Gradients for blending -->
+      <div class="absolute inset-0 bg-linear-to-t from-gaming-background via-gaming-background/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-linear-to-r from-gaming-background via-gaming-background/50 to-transparent"></div>
+    </div>  
     
     <!-- Content -->
     <div class="absolute bottom-0 left-0 p-12 w-full max-w-3xl flex flex-col items-start gap-4 z-10">
