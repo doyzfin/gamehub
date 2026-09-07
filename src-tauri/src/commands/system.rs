@@ -1,5 +1,5 @@
 use serde::Serialize;
-use sysinfo::{System, CpuRefreshKind, RefreshKind};
+use sysinfo::{System, CpuRefreshKind, RefreshKind, MemoryRefreshKind};
 use std::sync::Mutex;
 
 #[derive(Serialize)]
@@ -21,7 +21,7 @@ pub struct SystemState {
 #[tauri::command]
 pub fn get_system_stats(state: tauri::State<'_, SystemState>) -> SystemStats {
     let mut sys = state.sys.lock().unwrap();
-    sys.refresh_specifics(RefreshKind::new().with_cpu(CpuRefreshKind::everything()).with_memory());
+    sys.refresh_specifics(RefreshKind::new().with_cpu(CpuRefreshKind::everything()).with_memory(MemoryRefreshKind::everything()));
     
     let cpu_usage = sys.global_cpu_info().cpu_usage();
     let ram_used = sys.used_memory() as f32 / 1024.0 / 1024.0 / 1024.0;
