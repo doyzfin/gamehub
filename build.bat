@@ -6,7 +6,7 @@ echo ==========================================
 echo [1/3] Verifying Node.js and Rust installation...
 where npm >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ERROR: Node.js (npm) is not installed or not in PATH!
+    echo ERROR: Node.js [npm] is not installed or not in PATH!
     echo Please install Node.js from https://nodejs.org/
     pause
     exit /b 1
@@ -14,7 +14,7 @@ if %errorlevel% neq 0 (
 
 where cargo >nul 2>nul
 if %errorlevel% neq 0 (
-    echo ERROR: Rust (cargo) is not installed or not in PATH!
+    echo ERROR: Rust [cargo] is not installed or not in PATH!
     echo Please install Rust from https://rustup.rs/
     pause
     exit /b 1
